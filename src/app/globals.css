@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-outfit), sans-serif;
+  background: #f4f6f4;
+  color: #1a1a1a;
+}
+
+/* Inputs base */
+input, select, textarea {
+  font-family: var(--font-outfit), sans-serif;
+}
+
+/* Scrollbar sutil */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f0f0f0; }
+::-webkit-scrollbar-thumb { background: #7ab648; border-radius: 3px; }
+
+/* Print styles */
+@media print {
+  body { background: white; }
+  .no-print { display: none !important; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-verde-oscuro text-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-verde-medio transition-colors;
+  }
+  .btn-secondary {
+    @apply bg-white text-verde-oscuro border border-verde-claro px-4 py-2 rounded-lg font-medium text-sm hover:bg-verde-suave transition-colors;
+  }
+  .btn-danger {
+    @apply bg-white text-red-500 border border-red-200 px-3 py-1 rounded text-xs hover:bg-red-50 transition-colors;
+  }
+  .input-field {
+    @apply w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-verde-claro focus:ring-1 focus:ring-verde-claro bg-white;
+  }
+  .card {
+    @apply bg-white rounded-xl border border-gray-100 shadow-sm p-5 mb-4;
+  }
+  .label {
+    @apply block text-xs text-gray-400 mb-1 font-medium uppercase tracking-wide;
+  }
+}
